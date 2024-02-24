@@ -8,6 +8,7 @@ jobs:
     name: Test Pi Pico SDK
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         sdk_version:
           - 2ccab115de0d42d31d6611cca19ef0cd0d2ccaa7
