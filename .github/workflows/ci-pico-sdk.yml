@@ -138,8 +138,8 @@ jobs:
         run: |
           mkdir ~/pico
           cd ~/pico
-          git clone https://github.com/raspberrypi/pico-sdk.git --depth 1 --branch ${SDK_VERSION}
-          cd pico-sdk && git submodule update --init && cd ..
+          git clone https://github.com/raspberrypi/pico-sdk.git
+          cd pico-sdk && git reset --hard ${SDK_VERSION} && git submodule update --init && cd ..
           git clone https://github.com/raspberrypi/pico-examples.git --depth 1 --branch "sdk-1.5.0"
           cd pico-examples && mkdir build && cd build && cmake .. && make -j4
         env:
